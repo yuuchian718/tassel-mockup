@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tassel Mockup Generator</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="wrap">
+    <h1>流苏刺绣挂件效果图生成器</h1>
+    <p class="sub">上传白底刺绣图 → 自动生成“外扩边 + 缝线 + 流苏毛边”预览图</p>
+  </header>
+
+  <main class="wrap grid">
+    <section class="card">
+      <h2>1）上传图片</h2>
+      <input id="file" type="file" accept="image/*" />
+      <div class="row">
+        <label class="label">外扩强度</label>
+        <input id="pad" type="range" min="6" max="80" value="28" />
+        <span id="padVal" class="badge">28px</span>
+      </div>
+
+      <div class="row">
+        <label class="label">流苏长度</label>
+        <input id="fringe" type="range" min="10" max="160" value="70" />
+        <span id="fringeVal" class="badge">70px</span>
+      </div>
+
+      <div class="row">
+        <label class="label">流苏密度</label>
+        <input id="density" type="range" min="40" max="400" value="180" />
+        <span id="densityVal" class="badge">180</span>
+      </div>
+
+      <div class="btns">
+        <button id="generate" disabled>生成效果图</button>
+        <button id="download" disabled>下载PNG</button>
+      </div>
+
+      <details class="tips">
+        <summary>小提示</summary>
+        <ul>
+          <li>图片背景越白越好（纯白最佳）。</li>
+          <li>外扩/流苏不用精确厘米，这里用像素做“视觉差不多”的效果。</li>
+          <li>生成慢就把“流苏密度”调低一点。</li>
+        </ul>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>2）预览</h2>
+      <div class="preview">
+        <canvas id="canvas" width="900" height="900"></canvas>
+      </div>
+      <p class="hint" id="status">未上传图片</p>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    <small>Made for fast listing mockups • GitHub Pages</small>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
