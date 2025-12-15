@@ -1,3 +1,4 @@
+console.log("APP JS LOADED v2");
 const el = (id) => document.getElementById(id);
 
 const fileInput = el("file");
