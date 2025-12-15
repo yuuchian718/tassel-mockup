@@ -84,6 +84,7 @@ btnGen.addEventListener("click", () => {
     const isBg = (r>thr && g>thr && b>thr);
     if(!isBg) mask[i] = 1;
   }
+console.log("mask pixel count:", mask.reduce((a,b)=>a+b, 0));
 
   // 2) pad (dilation) to approximate 0.5cm feel
   const padPx = parseInt(pad.value, 10);
